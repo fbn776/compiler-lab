@@ -11,6 +11,7 @@ int num_productions=0;
 //Adds a character to a set represented as a string
 void set_add(char *set,char elem)
 {
+    //used to check if element already exists in set
     if(!strchr(set,elem))
     {
         int idx = strlen(set);
@@ -36,11 +37,13 @@ void set_remove(char *set,char elem)
         while (set[idx++])
         {
             set[idx-1]=set[idx];
+            //idx = idx + 1 instead we use while(set[idx++]) earlier as postfix
         }
         set[idx]='\0';
     }
 }
 //returns set membership
+//returns 1 if element is there else 0
 int is_in_set(char *set,char elem)
 {
     return strchr(set,elem)!=NULL;

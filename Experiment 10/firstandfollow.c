@@ -62,6 +62,7 @@ void printset(char *set)
     printf("}\n");
 }
 //Calculates the index of a non terminal by its ordinal
+//A -> 0, B-> 1 ...
 int get_index(char NT)
 {
     return NT-'A';

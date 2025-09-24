@@ -34,9 +34,10 @@ void set_remove(char *set,char elem)
     else
     {   //The index of the element to be removed is calculated
         int idx=strchr(set,elem)-set;
+        //till null character
         while (set[idx++])
         {
-            set[idx-1]=set[idx];
+            set[idx-1]=set[idx];    //left shift of elements
             //idx = idx + 1 instead we use while(set[idx++]) earlier as postfix
         }
         set[idx]='\0';

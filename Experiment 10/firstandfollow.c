@@ -106,7 +106,7 @@ void calc_first(char symbol,char *set)
                 while(productions[i][j]!='\0')
                 {
                     calc_first(productions[i][j],temp_first);
-                    for(int l=0;temp_first[l]!=0;l++) //Copy the first set to result
+                    for(int l=0;temp_first[l]!=0;l++) //Copy the first set to result    //temp_first[l] != 0 same as temp_first[l] != '/0'
                         set_add(set,temp_first[l]);
                     if(is_in_set(temp_first,'#')) 
                     {

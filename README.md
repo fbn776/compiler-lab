@@ -9,3 +9,4 @@
 |4   | Lexical Analyzer using Lex   |
 |5   | YAAC Specification to recognize valid arithmetic expressions   |
 |6   | YAAC Specification to recognize valid identifier   |
+|7   | Calculator using Lex and YAAC   |

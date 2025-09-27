@@ -10,9 +10,9 @@
 |5   | YAAC Specification to recognize valid arithmetic expressions   |
 |6   | YAAC Specification to recognize valid identifier   |
 |7   | Calculator using Lex and YAAC   |
-|8   | Calculator using Lex and YAAC   |
-|9   | Calculator using Lex and YAAC   |
-|10   | Calculator using Lex and YAAC   |
-|11   | Calculator using Lex and YAAC   |
-|12   | Calculator using Lex and YAAC   |
-|13   | Calculator using Lex and YAAC   |
+|8   | Convert BNF rules into YAAC form and generate abstract syntax tree   |
+|9   | Lexical Analyzer   |
+|10   | First & Follow   |
+|11   | Recursive Descent Parser   |
+|12   | Shift Reduce Parser   |
+|13   | Constant Propogation   |

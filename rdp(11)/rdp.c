@@ -28,6 +28,14 @@ int main() {
     }
 }
 
+/*
+E  -> TE'
+E' -> +TE' | -TE'
+T  -> FT'
+T' -> *FT' | /FT'
+F  -> (E) | id
+*/
+
 void E() {
     T();
     Eprime();

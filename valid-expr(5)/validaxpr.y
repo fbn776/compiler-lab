@@ -3,7 +3,9 @@
     int yylex();
     int yyerror();
 %}
+
 %token id num
+
 %left '+' '-'
 %left '*' '/'
 %left '(' ')'
@@ -19,13 +21,13 @@ E : E '+' E
   | num
   ;
 %%
-int main()
-{
+
+int main() {
     yyparse();
     return 0;
 }
-int yyerror(char *m)
-{
+
+int yyerror(char *m) {
     printf("Invalid Arithmetic Expression\n");
     return 0;
 }

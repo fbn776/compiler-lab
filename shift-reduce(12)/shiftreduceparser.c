@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 #define NUMPROD 6	//maximum production nos
 #define MAXPRODLEN 10	//maximum production length
 #define MAX 50		//size of value and input string
 
-char productions[NUMPROD][MAXPRODLEN] = {"E=E+E", "E=E*E", "E=i", "E=(E)", "E=E-E", "E=E/E"}; //define productions
+char productions[NUMPROD][MAXPRODLEN] = {"E=E+E", "E=E*E", "E=i", "E=(E)", "E=E-E", "E=E/E"};
 char *ptr_prod = &productions[0][0]; //ptr to production table
 char input[MAX] = {0}, stack[MAX] = {0};
 short top = -1, ip_ptr = 0; //ptr to top of stack and input string

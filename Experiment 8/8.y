@@ -9,6 +9,7 @@
     int INT;
     ASTNode *ptr;
 }
+
 %token <INT> NUMBER
 %token NL
 

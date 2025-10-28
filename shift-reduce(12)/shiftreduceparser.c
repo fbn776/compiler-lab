@@ -18,14 +18,14 @@ void reduce(int prodno, char *stackpos);
 int main() {
     printf("Enter the string to be parsed: ");
     scanf("%[^\n]", input);
-    getchar(); //remove extra new line
+    getchar();
     printf("\nSHIFT-REDUCE-PARSING\n");
     printf("STACK\t\tINPUT\t\tACTION\n");
     printf("-----\t\t-----\t\t------\n");
+
     while (input[ip_ptr] != '\0') {
         shift(input[ip_ptr++]);
-        for (int j = 0; j < NUMPROD; j++) //continuously reduce
-        {
+        for (int j = 0; j < NUMPROD; j++) {
             for (int i = 0; i < NUMPROD; i++) {
                 //finding the begining of the handle in the stack
                 char *pos = strstr(stack, (ptr_prod + i * MAXPRODLEN + 2));

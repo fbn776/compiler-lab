@@ -3,8 +3,9 @@
 import json
 import urllib.request
 import urllib.error
+import sys
 
-API_KEY = ""
+API_KEY = "AIzaSyCrTygS2Q5O_e_4l7F3H6BGgfMZvUxWngM"
 
 MODEL_NAME = "gemini-2.5-flash"
 API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL_NAME}:generateContent?key={API_KEY}"
@@ -79,7 +80,8 @@ def main():
 
     while True:
         try:
-            user_input = input("You: ")
+            print("Input: ")
+            user_input = sys.stdin.read().strip()
 
             if user_input.lower() in ['exit', 'quit']:
                 print("Bot: Good luck with your exam!")

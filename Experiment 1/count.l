@@ -12,15 +12,6 @@
 %%
 
 int main(int argc, char **argv) {
-    if(argc > 1) {
-		FILE *fp = fopen(argv[1], "r");
-
-        if(!fp) {
-			printf("Can't open file\n");
-        }
-        yyin = fp;
-    }
-
     yylex();
     printf("Lines : %d\n", lines);
     printf("Words : %d\n", words);

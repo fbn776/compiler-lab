@@ -2,6 +2,7 @@
 #include<string.h>
 #include<ctype.h>
 #include<stdlib.h>
+
 #define MAXQUADS 10
 #define OPNDSIZE 5
 
@@ -83,13 +84,11 @@ int main() {
     scanf(" %d", &numquads);
     printf("Enter each instruction\n e.g.\n + 2 3 a\n = 3 - b\n");
     for (int i = 0; i < numquads; i++) {
-        getchar();
-        quads[i].op = getchar();
-        scanf("%s %s %s", quads[i].op1, quads[i].op2, quads[i].res);
+        scanf(" %c %s %s %s", &quads[i].op, quads[i].op1, quads[i].op2, quads[i].res);
     }
     fold();
     propogate();
-    printf("The code after constant folding and propogation is:\n");
+    printf("The code after constant folding and propagation is:\n");
     printf("op\topnd1\topnd2\tresult\n");
     printf("==============================\n");
     for (int i = 0; i < numquads; i++) {

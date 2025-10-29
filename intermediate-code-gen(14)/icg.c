@@ -17,6 +17,7 @@ int priority(char c) {
 void icg() {
     int i = 0;
     int tempCount = 1;
+
     while (expr[i] != '\0') {
         char temp_opnd[MAXSIZE] = {'\0'};
         int j = 0;

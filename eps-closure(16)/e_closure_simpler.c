@@ -27,7 +27,7 @@ int main() {
     printf("Enter number of transitions: ");
     scanf("%d", &t);
 
-    printf("Enter transitions in format q1aq2 where a is input symbol (# for epsilon):\n");
+    printf("Enter transitions in format q1 a q2 where a is input symbol (# for epsilon):\n");
     for (int i = 0; i < t; i++) {
         char q1[5], q2[5], sym;
         scanf("%s %c %s", q1, &sym, q2);
@@ -45,7 +45,7 @@ int main() {
         visited[i] = 1;
         dfs(i);
 
-        printf("ε-closure(q%d) = { ", i);
+        printf("epsilon-closure(q%d) = { ", i);
         for (int j = 0; j < n; j++) {
             if (visited[j]) {
                 printf("q%d ", j);

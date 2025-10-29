@@ -4,6 +4,7 @@
         #include<stdio.h>
 %}
 %token IF ELSE ID RELOP
+
 %%
 start: stmt '\n' {printf("Valid if-else statement\n"); return 0;}
 

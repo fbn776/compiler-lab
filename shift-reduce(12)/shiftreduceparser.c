@@ -13,7 +13,7 @@ short top = -1, ip_ptr = 0; //ptr to top of stack and input string
 
 void shift(char symb);
 
-void reduce(int prodno, char *stackpos);
+void reduce(int prodno, char *str);
 
 int main() {
     printf("Enter the string to be parsed: ");
@@ -27,14 +27,15 @@ int main() {
         shift(input[ip_ptr++]);
         for (int j = 0; j < NUMPROD; j++) {
             for (int i = 0; i < NUMPROD; i++) {
-                //finding the begining of the handle in the stack
-                char *pos = strstr(stack, (ptr_prod + i * MAXPRODLEN + 2));
-                if (pos != NULL) {
-                    reduce(i, pos);
+                //                                      &productions[i][2]
+                char *str = strstr(stack, ptr_prod + i * MAXPRODLEN + 2);
+                if (str != NULL) {
+                    reduce(i, str);
                 }
             }
         }
     }
+
     //after input is finished
     if (top == 0 && stack[top] == 'E') {
         printf("Input accepted\n");
@@ -48,10 +49,10 @@ void shift(char c) {
     printf("%s\t\t%s\t\tShifted %c to stack\n", stack, (input + ip_ptr), c);
 }
 
-void reduce(int prodno, char *stackpos) {
-    int len = strlen(stackpos);
+void reduce(int prodno, char *str) {
+    int len = strlen(str);
     top -= len;
-    bzero((stack + top + 1), len);
+    bzero(stack + top + 1, len);
     stack[++top] = productions[prodno][0];
     printf("%s\t\t%s\t\tReduced by the production %s\n", stack, (input + ip_ptr), productions[prodno]);
 }
